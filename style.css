@@ -49,7 +49,8 @@ button {
 
 .hero {
   width: 100%;
-  padding: 28px clamp(16px, 4vw, 48px) 30px;
+  min-height: auto !important;
+  padding: 22px 0 24px !important;
   background:
     radial-gradient(circle at 82% 22%, rgba(255, 255, 255, 0.18), transparent 26%),
     linear-gradient(135deg, #0f3b57 0%, #0d5b6b 45%, #1fa39a 100%);
@@ -57,12 +58,13 @@ button {
 }
 
 .hero-inner {
-  width: min(1120px, 100%);
+  width: min(1120px, calc(100% - 32px));
+  max-width: 1120px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 150px;
-  gap: 22px;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .privacy-card,
@@ -76,16 +78,19 @@ button {
 }
 
 .hero-side {
-  align-self: stretch;
-  display: grid;
-  gap: 12px;
-  justify-items: end;
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+  justify-content: center;
+  flex: 0 0 auto;
 }
 
 .otter-profile {
   position: relative;
-  width: 76px;
+  width: 58px !important;
+  height: 58px !important;
+  min-width: 58px !important;
   aspect-ratio: 1;
   flex: 0 0 auto;
   display: grid;
@@ -121,14 +126,14 @@ button {
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  min-height: 30px;
-  margin: 0 0 10px;
-  padding: 6px 12px;
+  min-height: 26px;
+  margin: 0 0 6px;
+  padding: 5px 12px !important;
   border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
   color: #e8fff9;
-  font-size: 0.85rem;
+  font-size: 0.76rem !important;
   font-weight: 850;
 }
 
@@ -140,17 +145,21 @@ p {
 
 h1 {
   max-width: 760px;
-  margin-bottom: 10px;
+  margin: 10px 0 8px !important;
   color: var(--white);
-  font-size: clamp(2.1rem, 3.4vw, 3.3rem);
-  line-height: 1.12;
-  letter-spacing: 0;
+  font-size: clamp(1.9rem, 3vw, 2.7rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.045em;
   word-break: keep-all;
   overflow-wrap: normal;
 }
 
 .title-line {
-  display: block;
+  display: inline;
+}
+
+.title-line + .title-line::before {
+  content: " ";
 }
 
 h2 {
@@ -162,31 +171,31 @@ h2 {
 }
 
 .hero-copy > p {
-  max-width: 760px;
-  margin-bottom: 14px;
+  max-width: 720px;
+  margin: 0 !important;
   color: rgba(238, 255, 250, 0.9);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem !important;
+  line-height: 1.55 !important;
 }
 
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 4px;
+  gap: 6px !important;
+  margin-top: 12px !important;
 }
 
 .hero-meta span,
 .help-button {
   display: inline-flex;
   align-items: center;
-  min-height: 32px;
-  padding: 7px 12px;
+  min-height: 28px;
+  padding: 5px 10px !important;
   border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
   color: #f3fffc;
-  font-size: 0.82rem;
+  font-size: 0.76rem !important;
   font-weight: 800;
   text-decoration: none;
   backdrop-filter: blur(8px);
@@ -198,8 +207,8 @@ h2 {
 }
 
 .help-button {
-  padding: 8px 14px;
-  font-size: 0.86rem;
+  padding: 6px 12px !important;
+  font-size: 0.78rem !important;
 }
 
 .purpose-card p,
@@ -568,16 +577,13 @@ footer {
 }
 
 @media (max-width: 900px) {
-  .hero-inner,
   .field-grid,
   .tool-grid {
     grid-template-columns: 1fr;
   }
 
   .hero-side {
-    grid-template-columns: auto auto;
-    justify-content: space-between;
-    justify-items: start;
+    align-items: flex-end;
   }
 
   .step-tabs {
@@ -585,9 +591,43 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .hero {
+    padding: 20px 0 22px !important;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  h1 {
+    font-size: clamp(1.65rem, 7vw, 2.1rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  .hero-copy > p {
+    font-size: 0.86rem !important;
+  }
+
+  .hero-side {
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .otter-profile {
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+  }
+}
+
 @media (max-width: 560px) {
   .hero {
-    padding: 24px 16px;
+    padding: 20px 0 22px !important;
   }
 
   .page {
@@ -601,13 +641,7 @@ footer {
   }
 
   .hero-side {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    justify-items: start;
-  }
-
-  h1 {
-    font-size: clamp(1.8rem, 7.2vw, 2.35rem);
+    gap: 10px;
   }
 
   .title-line {
@@ -618,13 +652,10 @@ footer {
     content: " ";
   }
 
-  .hero-copy > p {
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
   .otter-profile {
-    width: 64px;
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
   }
 
   .privacy-card {
