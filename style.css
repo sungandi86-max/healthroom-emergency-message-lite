@@ -142,8 +142,8 @@ h1 {
   max-width: 760px;
   margin-bottom: 10px;
   color: var(--white);
-  font-size: clamp(2rem, 3vw, 2.75rem);
-  line-height: 1.15;
+  font-size: clamp(2.1rem, 3.4vw, 3.3rem);
+  line-height: 1.12;
   letter-spacing: 0;
   word-break: keep-all;
   overflow-wrap: normal;
@@ -162,11 +162,11 @@ h2 {
 }
 
 .hero-copy > p {
-  max-width: 720px;
+  max-width: 760px;
   margin-bottom: 14px;
   color: rgba(238, 255, 250, 0.9);
-  font-size: 0.98rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .hero-meta {
@@ -237,7 +237,7 @@ h2 {
 .page {
   width: min(1180px, 100%);
   margin: 0 auto;
-  padding: 22px clamp(16px, 4vw, 48px) 42px;
+  padding: 18px clamp(16px, 4vw, 48px) 42px;
 }
 
 .purpose-card {
@@ -251,31 +251,6 @@ h2 {
 
 .purpose-card p {
   max-width: 880px;
-}
-
-.app-intro-card {
-  border-color: rgba(40, 191, 163, 0.28);
-  background: rgba(255, 255, 255, 0.96);
-}
-
-.app-intro-card h2 {
-  margin-bottom: 8px;
-  font-size: clamp(24px, 3vw, 34px);
-  word-break: keep-all;
-}
-
-.intro-badge {
-  display: inline-flex;
-  width: fit-content;
-  min-height: 30px;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: var(--navy);
-  color: var(--white);
-  font-size: 0.84rem;
-  font-weight: 900;
 }
 
 .privacy-card {
