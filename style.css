@@ -142,7 +142,7 @@ h1 {
   max-width: 760px;
   margin-bottom: 10px;
   color: var(--white);
-  font-size: clamp(2rem, 3.2vw, 3.1rem);
+  font-size: clamp(2rem, 3vw, 2.75rem);
   line-height: 1.15;
   letter-spacing: 0;
   word-break: keep-all;
@@ -237,7 +237,7 @@ h2 {
 .page {
   width: min(1180px, 100%);
   margin: 0 auto;
-  padding: 18px clamp(16px, 4vw, 48px) 42px;
+  padding: 22px clamp(16px, 4vw, 48px) 42px;
 }
 
 .purpose-card {
@@ -246,11 +246,40 @@ h2 {
   gap: 16px;
   align-items: center;
   padding: 22px;
-  margin: 18px 0;
+  margin: 0 0 18px;
 }
 
 .purpose-card p {
   max-width: 880px;
+}
+
+.app-intro-card {
+  border-color: rgba(40, 191, 163, 0.28);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.app-intro-card h2 {
+  margin-bottom: 8px;
+  font-size: clamp(24px, 3vw, 34px);
+  word-break: keep-all;
+}
+
+.intro-badge {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 30px;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.privacy-card {
+  margin-bottom: 18px;
 }
 
 .safety-badges {
@@ -603,7 +632,7 @@ footer {
   }
 
   h1 {
-    font-size: clamp(1.8rem, 8vw, 2.4rem);
+    font-size: clamp(1.8rem, 7.2vw, 2.35rem);
   }
 
   .title-line {
