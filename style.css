@@ -50,7 +50,7 @@ button {
 .hero {
   width: 100%;
   min-height: auto !important;
-  padding: 22px 0 24px !important;
+  padding: 28px 0 30px !important;
   background:
     radial-gradient(circle at 82% 22%, rgba(255, 255, 255, 0.18), transparent 26%),
     linear-gradient(135deg, #0f3b57 0%, #0d5b6b 45%, #1fa39a 100%);
@@ -80,25 +80,25 @@ button {
 .hero-side {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  align-items: flex-end;
+  gap: 14px;
+  align-items: center;
   justify-content: center;
   flex: 0 0 auto;
 }
 
 .otter-profile {
   position: relative;
-  width: 58px !important;
-  height: 58px !important;
-  min-width: 58px !important;
+  width: 92px !important;
+  height: 92px !important;
+  min-width: 92px !important;
   aspect-ratio: 1;
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  border: 3px solid var(--white);
+  border: 3px solid rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 16px 34px rgba(5, 32, 48, 0.28);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
   overflow: hidden;
 }
 
@@ -145,11 +145,11 @@ p {
 
 h1 {
   max-width: 760px;
-  margin: 10px 0 8px !important;
+  margin: 8px 0 10px !important;
   color: var(--white);
-  font-size: clamp(1.9rem, 3vw, 2.7rem) !important;
-  line-height: 1.08 !important;
-  letter-spacing: -0.045em;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem) !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.04em;
   word-break: keep-all;
   overflow-wrap: normal;
 }
@@ -160,6 +160,10 @@ h1 {
 
 .title-line + .title-line::before {
   content: " ";
+}
+
+.title-nowrap {
+  white-space: nowrap;
 }
 
 h2 {
@@ -619,9 +623,9 @@ footer {
   }
 
   .otter-profile {
-    width: 52px !important;
-    height: 52px !important;
-    min-width: 52px !important;
+    width: 72px !important;
+    height: 72px !important;
+    min-width: 72px !important;
   }
 }
 
@@ -653,9 +657,9 @@ footer {
   }
 
   .otter-profile {
-    width: 52px !important;
-    height: 52px !important;
-    min-width: 52px !important;
+    width: 72px !important;
+    height: 72px !important;
+    min-width: 72px !important;
   }
 
   .privacy-card {
