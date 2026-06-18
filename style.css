@@ -147,8 +147,8 @@ h1 {
   max-width: 760px;
   margin: 8px 0 10px !important;
   color: var(--white);
-  font-size: clamp(1.8rem, 2.8vw, 2.6rem) !important;
-  line-height: 1.16 !important;
+  font-size: clamp(1.7rem, 2.55vw, 2.45rem) !important;
+  line-height: 1.12 !important;
   letter-spacing: -0.04em;
   word-break: keep-all;
   overflow-wrap: normal;
@@ -224,9 +224,9 @@ h2 {
 
 .privacy-card {
   display: grid;
-  gap: 7px;
+  gap: 6px;
   align-content: center;
-  padding: 18px 20px;
+  padding: 16px 20px;
   border: 1px solid #fed7aa;
   border-color: #fed7aa;
   background: var(--warning-bg);
@@ -239,27 +239,27 @@ h2 {
 }
 
 .privacy-card strong {
-  font-size: 16px;
+  font-size: 0.98rem;
 }
 
 .privacy-card p {
-  font-size: 14px;
-  line-height: 1.65;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .page {
   width: min(1180px, 100%);
   margin: 0 auto;
-  padding: 18px clamp(16px, 4vw, 48px) 42px;
+  padding: 16px clamp(16px, 4vw, 48px) 42px;
 }
 
 .purpose-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 16px;
+  gap: 14px;
   align-items: center;
-  padding: 22px;
-  margin: 0 0 18px;
+  padding: 18px 20px;
+  margin: 0 0 16px;
 }
 
 .purpose-card p {
@@ -267,13 +267,13 @@ h2 {
 }
 
 .privacy-card {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .safety-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
+  gap: 8px;
 }
 
 .safety-badges span {
