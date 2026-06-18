@@ -1,18 +1,22 @@
 :root {
   --navy: #12324a;
   --navy-soft: #1f4c66;
+  --navy-ink: #0d2638;
   --mint: #28bfa3;
   --mint-dark: #15937f;
   --mint-pale: #e9fbf7;
+  --mint-soft: #f3fffc;
   --white: #ffffff;
   --bg: #f4faf9;
   --text: #1d2939;
   --muted: #667085;
   --line: #d7e6e3;
+  --line-strong: #b8d8d2;
   --warning: #9a3412;
   --warning-bg: #fff7ed;
-  --shadow: 0 18px 45px rgba(18, 50, 74, 0.12);
-  --radius: 20px;
+  --shadow: 0 14px 34px rgba(18, 50, 74, 0.1);
+  --shadow-soft: 0 8px 22px rgba(18, 50, 74, 0.08);
+  --radius: 18px;
 }
 
 * {
@@ -31,6 +35,7 @@ body {
     radial-gradient(circle at 8% 0%, rgba(40, 191, 163, 0.14), transparent 28%),
     linear-gradient(180deg, #f7fffd 0%, var(--bg) 42%, #ffffff 100%);
   line-height: 1.6;
+  word-break: keep-all;
 }
 
 button,
@@ -45,15 +50,15 @@ button {
 }
 
 .hero {
-  padding: 36px clamp(16px, 4vw, 48px) 20px;
+  padding: 24px clamp(16px, 4vw, 48px) 14px;
 }
 
 .hero-inner {
   width: min(1180px, 100%);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
-  gap: 22px;
+  grid-template-columns: minmax(0, 1.38fr) minmax(280px, 0.62fr);
+  gap: 16px;
   align-items: stretch;
 }
 
@@ -69,13 +74,16 @@ button {
 }
 
 .hero-copy {
-  padding: clamp(24px, 4vw, 42px);
+  display: grid;
+  align-content: center;
+  padding: clamp(22px, 3vw, 32px);
 }
 
 .eyebrow {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: var(--mint-dark);
   font-weight: 800;
+  font-size: 14px;
 }
 
 h1,
@@ -85,19 +93,22 @@ p {
 }
 
 h1 {
-  max-width: 760px;
-  margin-bottom: 14px;
+  max-width: 820px;
+  margin-bottom: 10px;
   color: var(--navy);
-  font-size: clamp(30px, 5vw, 54px);
-  line-height: 1.12;
+  font-size: clamp(28px, 3.8vw, 44px);
+  line-height: 1.18;
   letter-spacing: 0;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 h2 {
   margin-bottom: 0;
   color: var(--navy);
-  font-size: 24px;
+  font-size: 22px;
   letter-spacing: 0;
+  line-height: 1.3;
 }
 
 .hero-copy p:last-child,
@@ -110,16 +121,26 @@ h2 {
 
 .privacy-card {
   display: grid;
-  gap: 8px;
+  gap: 7px;
   align-content: center;
-  padding: 24px;
+  padding: 20px;
   border-color: #fed7aa;
   background: var(--warning-bg);
+  box-shadow: var(--shadow-soft);
 }
 
 .privacy-card strong,
 .result-warning {
   color: var(--warning);
+}
+
+.privacy-card strong {
+  font-size: 16px;
+}
+
+.privacy-card p {
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .page {
@@ -130,49 +151,94 @@ h2 {
 
 .purpose-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
-  gap: 20px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
   align-items: center;
-  padding: 24px;
-  margin-bottom: 20px;
+  padding: 22px;
+  margin-bottom: 18px;
 }
 
-.purpose-card ul {
-  display: grid;
-  gap: 8px;
-  margin: 0;
-  padding-left: 20px;
+.purpose-card p {
+  max-width: 880px;
+}
+
+.safety-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.safety-badges span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 1px solid rgba(40, 191, 163, 0.28);
+  border-radius: 999px;
+  background: var(--mint-pale);
   color: var(--navy-soft);
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 850;
 }
 
 .wizard-card {
-  overflow: hidden;
+  overflow: visible;
+  padding: 12px;
 }
 
 .step-tabs {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
-  background: var(--line);
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 4px 14px;
+  background: transparent;
+  scrollbar-width: thin;
 }
 
 .step-tab {
-  min-height: 56px;
-  padding: 12px 10px;
-  background: #f8fffd;
+  flex: 1 0 170px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--mint-soft);
   color: var(--navy-soft);
   cursor: pointer;
-  font-weight: 800;
+  font-weight: 900;
+  box-shadow: 0 5px 14px rgba(18, 50, 74, 0.05);
+  white-space: nowrap;
 }
 
 .step-tab.is-active {
   background: var(--navy);
   color: var(--white);
+  border-color: var(--navy);
+  box-shadow: 0 10px 24px rgba(18, 50, 74, 0.18);
+}
+
+.step-tab span {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--mint-dark);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.step-tab.is-active span {
+  color: var(--navy);
 }
 
 form {
-  padding: clamp(18px, 3vw, 30px);
+  padding: clamp(16px, 2.6vw, 26px) 8px 4px;
 }
 
 .step-panel {
@@ -187,7 +253,7 @@ form {
   display: flex;
   gap: 10px;
   align-items: baseline;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .section-heading span {
@@ -202,7 +268,7 @@ form {
 .field-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
 label {
@@ -219,13 +285,17 @@ label {
 select,
 textarea {
   width: 100%;
-  min-height: 46px;
-  border: 1px solid var(--line);
+  min-height: 48px;
+  border: 1px solid var(--line-strong);
   border-radius: 14px;
-  padding: 11px 13px;
+  padding: 12px 14px;
   background: var(--white);
   color: var(--text);
   outline: none;
+}
+
+textarea::placeholder {
+  color: #98a2b3;
 }
 
 textarea {
@@ -240,7 +310,7 @@ textarea:focus {
 
 .inline-warning {
   margin-bottom: 16px;
-  padding: 14px 16px;
+  padding: 13px 15px;
   border: 1px solid #fed7aa;
   border-radius: 16px;
   background: var(--warning-bg);
@@ -259,8 +329,8 @@ textarea:focus {
 
 .wizard-actions {
   justify-content: space-between;
-  margin-top: 24px;
-  padding-top: 20px;
+  margin-top: 22px;
+  padding-top: 18px;
   border-top: 1px solid var(--line);
 }
 
@@ -291,12 +361,12 @@ button.ghost {
 }
 
 button.primary {
-  background: var(--mint);
+  background: var(--navy);
   color: var(--white);
 }
 
 button.primary:hover {
-  background: var(--mint-dark);
+  background: var(--navy-ink);
 }
 
 button.secondary {
@@ -307,6 +377,16 @@ button.secondary {
 
 button.secondary:hover {
   background: var(--mint-pale);
+}
+
+#copyBtn {
+  border-color: var(--mint);
+  background: var(--mint);
+  color: var(--white);
+}
+
+#copyBtn:hover {
+  background: var(--mint-dark);
 }
 
 button.ghost {
@@ -326,16 +406,18 @@ button:disabled {
 
 .result-card {
   display: grid;
-  gap: 10px;
-  padding: 18px;
+  gap: 12px;
+  padding: 20px;
   border: 1px solid var(--line);
   border-radius: 18px;
   background: #fbfffe;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
 #resultBox {
-  min-height: 440px;
+  min-height: 520px;
   white-space: pre-wrap;
+  line-height: 1.8;
 }
 
 .related-tools {
@@ -392,20 +474,19 @@ footer {
 
 @media (max-width: 900px) {
   .hero-inner,
-  .purpose-card,
   .field-grid,
   .tool-grid {
     grid-template-columns: 1fr;
   }
 
   .step-tabs {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-inline: -2px;
   }
 }
 
 @media (max-width: 560px) {
   .hero {
-    padding: 16px 12px 12px;
+    padding: 14px 12px 10px;
   }
 
   .page {
@@ -420,12 +501,19 @@ footer {
     padding: 18px;
   }
 
-  .step-tabs,
   .result-toolbar,
   .button-group,
   .wizard-actions {
     grid-template-columns: 1fr;
     display: grid;
+  }
+
+  .step-tabs {
+    padding-bottom: 12px;
+  }
+
+  .step-tab {
+    flex-basis: 150px;
   }
 
   button.primary,

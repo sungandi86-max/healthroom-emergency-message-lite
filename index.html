@@ -14,7 +14,7 @@
         <p class="eyebrow">쑤캥T 보건실 도구모음 · 무료 Lite</p>
         <h1>보건실 응급상황 연락·보고 문구 도우미 Lite</h1>
         <p>
-          응급상황 발생 후 보건교사가 관리자 보고, 담임 안내, 학부모 안내에 활용할 수 있는
+          응급상황 발생 후 관리자 보고, 담임 안내, 학부모 안내에 활용할 수 있는
           사실 중심 문구를 빠르게 생성합니다.
         </p>
       </div>
@@ -37,19 +37,20 @@
           실제 기록은 학교 내부 양식과 보건일지에 작성해 주세요.
         </p>
       </div>
-      <ul>
-        <li>진단·치료·책임 판단을 하지 않음</li>
-        <li>안전공제 대상 여부 판단을 하지 않음</li>
-        <li>입력값 저장·서버 전송 없음</li>
-      </ul>
+      <div class="safety-badges" aria-label="핵심 안전 원칙">
+        <span>공식 기록지를 대체하지 않음</span>
+        <span>진단·치료·책임 판단을 하지 않음</span>
+        <span>안전공제 대상 여부 판단을 하지 않음</span>
+        <span>입력값 저장·서버 전송 없음</span>
+      </div>
     </section>
 
     <section class="wizard-card">
       <nav class="step-tabs" aria-label="작성 단계">
-        <button class="step-tab is-active" type="button" data-step-jump="1">1. 기본 상황</button>
-        <button class="step-tab" type="button" data-step-jump="2">2. 확인된 사실</button>
-        <button class="step-tab" type="button" data-step-jump="3">3. 연락·인계</button>
-        <button class="step-tab" type="button" data-step-jump="4">4. 문구 생성</button>
+        <button class="step-tab is-active" type="button" data-step-jump="1"><span>1</span> 기본 상황</button>
+        <button class="step-tab" type="button" data-step-jump="2"><span>2</span> 확인된 사실</button>
+        <button class="step-tab" type="button" data-step-jump="3"><span>3</span> 연락·인계</button>
+        <button class="step-tab" type="button" data-step-jump="4"><span>4</span> 문구 생성</button>
       </nav>
 
       <form id="phraseForm">
