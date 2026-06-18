@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="응급상황 발생 후 관리자 보고, 담임 안내, 학부모 안내에 활용할 수 있는 사실 중심 문구를 생성하는 무료 Lite 도구입니다.">
+  <title>보건실 응급상황 연락·보고 문구 도우미 Lite</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">쑤캥T 보건실 도구모음 · 무료 Lite</p>
+        <h1>보건실 응급상황 연락·보고 문구 도우미 Lite</h1>
+        <p>
+          응급상황 발생 후 보건교사가 관리자 보고, 담임 안내, 학부모 안내에 활용할 수 있는
+          사실 중심 문구를 빠르게 생성합니다.
+        </p>
+      </div>
+      <div class="privacy-card" aria-label="개인정보 및 민감정보 입력 금지">
+        <strong>개인정보·민감정보 입력 금지</strong>
+        <p>
+          학생 이름, 학번, 주민등록번호, 연락처, 질병명, 진단명, 검사 결과, 상담 내용,
+          투약 기록, 보호자 연락처, 교직원명, 개인 연락처를 입력하지 마세요.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="purpose-card" aria-label="앱 사용 안내">
+      <div>
+        <h2>연락·보고·안내 문구 초안만 생성합니다</h2>
+        <p>
+          공식 응급환자 이송 및 사고 기록지를 대체하지 않으며, 응급처치 방법 안내나 의학적 판단을 하지 않습니다.
+          실제 기록은 학교 내부 양식과 보건일지에 작성해 주세요.
+        </p>
+      </div>
+      <ul>
+        <li>진단·치료·책임 판단을 하지 않음</li>
+        <li>안전공제 대상 여부 판단을 하지 않음</li>
+        <li>입력값 저장·서버 전송 없음</li>
+      </ul>
+    </section>
+
+    <section class="wizard-card">
+      <nav class="step-tabs" aria-label="작성 단계">
+        <button class="step-tab is-active" type="button" data-step-jump="1">1. 기본 상황</button>
+        <button class="step-tab" type="button" data-step-jump="2">2. 확인된 사실</button>
+        <button class="step-tab" type="button" data-step-jump="3">3. 연락·인계</button>
+        <button class="step-tab" type="button" data-step-jump="4">4. 문구 생성</button>
+      </nav>
+
+      <form id="phraseForm">
+        <section class="step-panel is-active" data-step="1">
+          <div class="section-heading">
+            <span>1단계</span>
+            <h2>기본 상황</h2>
+          </div>
+          <div class="field-grid">
+            <label>상황 발생 시점
+              <select name="eventTime">
+                <option>수업 중</option>
+                <option>쉬는 시간</option>
+                <option>점심시간</option>
+                <option>체육활동 중</option>
+                <option>하교 전후</option>
+                <option>방과후</option>
+                <option>기타</option>
+              </select>
+            </label>
+            <label>상황 발생 장소
+              <select name="eventPlace">
+                <option>교실</option>
+                <option>복도</option>
+                <option>운동장</option>
+                <option>체육관</option>
+                <option>급식실</option>
+                <option>보건실</option>
+                <option>기타</option>
+              </select>
+            </label>
+            <label>대상 구분
+              <select name="targetType">
+                <option>학생</option>
+                <option>교직원</option>
+                <option>방문자</option>
+                <option>기타</option>
+              </select>
+            </label>
+            <label>상황 유형
+              <select name="eventType">
+                <option>넘어짐·부딪힘</option>
+                <option>통증 호소</option>
+                <option>어지러움 호소</option>
+                <option>호흡 불편 호소</option>
+                <option>출혈</option>
+                <option>발열</option>
+                <option>알레르기 관련 호소</option>
+                <option>기타</option>
+              </select>
+            </label>
+            <label>생성할 문구
+              <select name="outputType" id="outputType">
+                <option>관리자 보고</option>
+                <option>담임 안내</option>
+                <option>학부모 안내</option>
+                <option>전체</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="step-panel" data-step="2">
+          <div class="section-heading">
+            <span>2단계</span>
+            <h2>확인된 사실</h2>
+          </div>
+          <div class="inline-warning">
+            진단명, 질병명, 검사 결과, 학생 이름, 학번 등 개별 학생이 식별되는 정보는 입력하지 마세요.
+          </div>
+          <div class="field-grid">
+            <label class="full">확인된 상황 요약
+              <textarea name="situationSummary" rows="4" placeholder="예: 쉬는 시간 복도에서 넘어짐 상황이 확인되었습니다."></textarea>
+            </label>
+            <label class="full">보건실에서 확인한 상태
+              <textarea name="checkedStatus" rows="4" placeholder="예: 통증을 호소하였고, 보건실에서 상태를 관찰하였습니다."></textarea>
+            </label>
+            <label class="full">보건실 조치 내용
+              <textarea name="actionTaken" rows="4" placeholder="예: 안정하도록 안내하고 상태를 관찰하였습니다."></textarea>
+            </label>
+            <label>현재 상태
+              <select name="currentStatus">
+                <option>보건실 안정 중</option>
+                <option>수업 복귀</option>
+                <option>보호자 연락 후 귀가</option>
+                <option>병원 진료 안내</option>
+                <option>119 인계</option>
+                <option>추가 확인 필요</option>
+                <option>기타</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="step-panel" data-step="3">
+          <div class="section-heading">
+            <span>3단계</span>
+            <h2>연락·인계</h2>
+          </div>
+          <div class="field-grid">
+            <label>담임 안내 여부
+              <select name="homeroomNotice">
+                <option>안내함</option>
+                <option>안내 예정</option>
+                <option>해당 없음</option>
+                <option>확인 필요</option>
+              </select>
+            </label>
+            <label>관리자 보고 여부
+              <select name="adminReport">
+                <option>보고함</option>
+                <option>보고 예정</option>
+                <option>해당 없음</option>
+                <option>확인 필요</option>
+              </select>
+            </label>
+            <label>보호자 안내 여부
+              <select name="guardianNotice">
+                <option>안내함</option>
+                <option>안내 예정</option>
+                <option>해당 없음</option>
+                <option>확인 필요</option>
+              </select>
+            </label>
+            <label>병원 진료 안내 여부
+              <select name="clinicNotice">
+                <option>안내함</option>
+                <option>보호자와 상의 필요</option>
+                <option>해당 없음</option>
+                <option>확인 필요</option>
+              </select>
+            </label>
+            <label>119 신고 또는 인계 여부
+              <select name="emergencyNotice">
+                <option>119 신고함</option>
+                <option>119 인계함</option>
+                <option>해당 없음</option>
+                <option>확인 필요</option>
+              </select>
+            </label>
+            <label class="full">추가 확인이 필요한 사항
+              <textarea name="followupNote" rows="4" placeholder="예: 보호자 안내 후 이후 상태 확인이 필요합니다."></textarea>
+            </label>
+          </div>
+        </section>
+
+        <section class="step-panel" data-step="4">
+          <div class="section-heading">
+            <span>4단계</span>
+            <h2>문구 생성</h2>
+          </div>
+          <div class="result-toolbar">
+            <span class="format-badge" id="formatBadge">관리자 보고</span>
+            <div class="button-group">
+              <button class="primary" type="button" id="generateBtn">문구 생성하기</button>
+              <button class="secondary" type="button" id="copyBtn">결과 복사하기</button>
+              <button class="ghost" type="reset" id="resetBtn">입력 초기화</button>
+            </div>
+          </div>
+          <div class="result-card">
+            <label for="resultBox">생성 결과 박스</label>
+            <textarea id="resultBox" rows="22" readonly placeholder="문구 생성하기 버튼을 누르면 결과가 표시됩니다."></textarea>
+            <p class="result-warning">
+              개인정보·민감정보 작성 주의: 학생 이름, 학번, 주민등록번호, 연락처, 질병명, 진단명,
+              검사 결과, 상담 내용, 투약 기록, 보호자 연락처, 교직원명, 개인 연락처는 입력하지 마세요.
+            </p>
+          </div>
+        </section>
+
+        <div class="wizard-actions">
+          <button class="secondary" type="button" id="prevBtn">이전</button>
+          <button class="primary" type="button" id="nextBtn">다음 단계로</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="related-tools" aria-label="함께 쓰면 좋은 도구">
+      <div class="section-heading compact">
+        <span>관련 도구</span>
+        <h2>함께 쓰면 좋은 도구</h2>
+      </div>
+      <div class="tool-grid">
+        <article>보건실 업무 로드맵 도우미</article>
+        <article>보건실 메신저 문구 생성기 Lite</article>
+        <article>보건실 공문·보고서 도우미 앱</article>
+        <article>보건실 업무 인수인계 메모 작성 도우미 Lite</article>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">응급상황 연락·보고 문구가 복사되었습니다.</div>
+
+  <footer>
+    © 쑤캥T 보건실 도구모음. 본 도구는 무료 공개용 Lite 자료입니다. 입력한 내용은 저장되지 않으며,
+    생성된 문구는 학교 상황에 맞게 수정하여 사용해 주세요. 개인정보와 민감정보는 입력하지 마세요.
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
